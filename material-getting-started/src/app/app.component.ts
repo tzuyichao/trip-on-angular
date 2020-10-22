@@ -10,4 +10,5 @@ export class AppComponent {
   myControl = new FormControl();
   options: string[]  = ['One', 'Two', 'Three'];
   title = 'material-getting-started';
+  myAge: number = 40;
 }
