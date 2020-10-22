@@ -13,11 +13,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { SnackbardemoComponent } from './snackbardemo/snackbardemo.component';
+import { FilterAutocompleteComponent } from './filter-autocomplete/filter-autocomplete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SnackbardemoComponent
+    SnackbardemoComponent,
+    FilterAutocompleteComponent
   ],
   imports: [
     BrowserModule,
