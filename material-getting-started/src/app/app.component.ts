@@ -11,4 +11,5 @@ export class AppComponent {
   options: string[]  = ['One', 'Two', 'Three'];
   title = 'material-getting-started';
   myAge: number = 40;
+  isMan: boolean = true;
 }
