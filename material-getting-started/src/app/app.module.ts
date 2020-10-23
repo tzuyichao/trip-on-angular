@@ -11,18 +11,22 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { SnackbardemoComponent } from './snackbardemo/snackbardemo.component';
 import { FilterAutocompleteComponent } from './filter-autocomplete/filter-autocomplete.component';
 
 import { AppIfDirective } from './appIf.directive';
 
+import { DialogOverviewExampleDialog } from './app.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SnackbardemoComponent,
     FilterAutocompleteComponent,
-    AppIfDirective
+    AppIfDirective,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ import { AppIfDirective } from './appIf.directive';
     MatInputModule,
     MatAutocompleteModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

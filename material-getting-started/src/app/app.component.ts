@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,42 @@ export class AppComponent {
   title = 'material-getting-started';
   myAge: number = 40;
   isMan: boolean = true;
+  name: string;
+  animal: string;
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    console.log(`name: ${this.name}`);
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '250px',
+      data: {name: this.name, animal: this.animal}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('dialog closed');
+      console.log(`result: ${result}`);
+      this.animal = result;
+    });
+    dialogRef.afterOpened().subscribe(() => {
+      console.log('dialog opened');
+    });
+  }
+}
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'dialog-overview-example-dialog.html'
+})
+export class DialogOverviewExampleDialog {
+  constructor (public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

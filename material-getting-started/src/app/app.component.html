@@ -22,7 +22,7 @@
 <div class="container" [ngSwitch]="myAge">
     <div *ngSwitchCase="'10'">age = 10</div>
     <div *ngSwitchCase="'20'">age = 20</div>
-    <div *ngSwitchDefault="'18'">age = 18</div>
+    <div *ngSwitchDefault>age = 18</div>
 </div>
 
 <app-filter-autocomplete></app-filter-autocomplete>
@@ -30,3 +30,19 @@
 <h3>appIf Directive</h3>
 <p *appIf="isMan">性別: 男</p>
 <p *appIf="!isMan">性別: 女</p>
+
+<h3>Dialog Overview</h3>
+<ol>
+    <li>
+        <mat-form-field>
+            <mat-label>What's your name?</mat-label>
+            <input matInput [(ngModel)]="name">
+        </mat-form-field>
+    </li>
+    <li>
+        <button mat-raised-button class="mat-focus-indicator mat-raised-button mat-button-base" (click) = "openDialog()">Pick One</button>
+    </li>
+    <li *ngIf="animal">
+        Your choose: <i>{{animal}}</i>
+    </li>
+</ol>
