@@ -1,6 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +18,9 @@ export class AppComponent {
   name: string;
   animal: string;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, iconRegistry: MatIconRegistry, santitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon('thumbs-up', santitizer.bypassSecurityTrustResourceUrl('assets/img/examples/thumbup-icon.svg'));    
+  }
 
   openDialog(): void {
     console.log(`name: ${this.name}`);
