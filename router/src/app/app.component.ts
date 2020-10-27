@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'router';
+  selected: string;
 
   constructor(private router: Router) {}
 
@@ -17,5 +18,12 @@ export class AppComponent {
 
   routeToD() {
     this.router.navigate(['/D']);
+  }
+
+  selectChange() {
+    if(this.selected != undefined) {
+      console.log(this.selected);
+      this.router.navigate(['/' + this.selected])
+    }
   }
 }

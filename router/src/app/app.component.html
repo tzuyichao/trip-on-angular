@@ -3,5 +3,16 @@
   <button mat-flat-button class="route-button" color="primary" routerLink="/B">B元件</button>
   <button mat-flat-button class="route-button" color="primary" (click)="routeToC()">C元件</button>
   <button mat-flat-button class="route-button" color="primary" (click)="routeToD()">D元件</button>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>請選擇</mat-label>
+      <mat-select [(ngModel)]="selected" (ngModelChange)="selectChange()">
+        <mat-option>None</mat-option>
+        <mat-option value="student">學生元件</mat-option>
+        <mat-option value="teacher">教師元件</mat-option>
+        <mat-option value="parent">家長元件</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
   <router-outlet></router-outlet>
 </div>
