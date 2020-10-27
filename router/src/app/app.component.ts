@@ -21,9 +21,13 @@ export class AppComponent {
   }
 
   selectChange() {
+    console.log(this.selected);
     if(this.selected != undefined) {
-      console.log(this.selected);
-      this.router.navigate(['/' + this.selected])
+      if(this.selected === 'student') {
+        this.router.navigate(['/' + this.selected], { queryParams: {name: '張三'} });
+      } else {
+        this.router.navigate(['/' + this.selected])
+      }
     }
   }
 }
