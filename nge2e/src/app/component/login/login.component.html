@@ -1,0 +1,21 @@
+<p>login works! <span id="message" style="color: #cc0000;">{{ message }}</span></p>
+<form (ngSubmit)="onSubmit()">
+<p>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input id="username" matInput type="text" [(ngModel)]="username" name="username">
+        <button mat-button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input id="password" matInput type="password" [(ngModel)]="password" name="password">
+    </mat-form-field>
+</p>
+<p>
+    <button id="login_button" type="submit" mat-raised-button color="primary">Login</button>
+</p>
+</form>
