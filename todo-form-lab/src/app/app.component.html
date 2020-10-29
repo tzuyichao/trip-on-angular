@@ -1,0 +1,8 @@
+<ul>
+  <ng-template ngFor let-item [ngForOf]="items" let-i="index">
+    <li>
+      {{ i }} - {{ item.name }}
+    </li>
+  </ng-template>
+</ul>
+<router-outlet></router-outlet>
